@@ -1,6 +1,9 @@
 import React, { useState, useCallback } from "react";
 import { Editor } from "slate-react";
+
+import dualViewStyles from "./dual-view.module.css";
 import * as tabsPlugin from "./tabs/editor/plugin";
+import htmlHandler from "./html-handler";
 
 export default function Tedtior({ value: initialValue }) {
   const [editorValue, setEditorValue] = useState(initialValue);
@@ -11,6 +14,11 @@ export default function Tedtior({ value: initialValue }) {
   const plugins = [tabsPlugin];
 
   return (
-    <Editor value={editorValue} onChange={onEditorChange} plugins={plugins} />
+    <section className={dualViewStyles.wrapper}>
+      <Editor value={editorValue} onChange={onEditorChange} plugins={plugins} />
+      <main
+        dangerouslySetInnerHTML={{ __html: htmlHandler.serialize(editorValue) }}
+      />
+    </section>
   );
 }

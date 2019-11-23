@@ -11,6 +11,7 @@
     "react-scripts": "3.0.1",
     "react-tabs": "3.0.0",
     "slate": "0.47.9",
+    "slate-html-serializer": "0.8.11",
     "slate-hyperscript": "0.13.9",
     "slate-react": "0.22.10"
   },

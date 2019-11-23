@@ -3,11 +3,11 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-import Teditor from "./Teditor";
+import Keditor from "./Keditor";
 import { value } from "./initialValue";
 
 function App() {
-  return <Teditor value={value} />;
+  return <Keditor value={value} />;
 }
 
 const rootElement = document.getElementById("root");
